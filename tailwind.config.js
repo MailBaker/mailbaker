@@ -1,11 +1,24 @@
+import colors from 'tailwindcss/colors';
 export default {
     content: [
         './src/**/*.{js,html}'
     ],
     theme: {
-        /**
-         * Default tailwind values converted from rem to px:
-         * */
+        extend: {
+            fontFamily: {
+                sans: ['ui-sans-serif', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
+                serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+                mono: ['ui-monospace', 'Menlo', 'Consolas', 'monospace'],
+                inter: ['Inter', 'sans-serif']
+            },
+        },
+        colors: {
+            transparent: 'transparent',
+            current: 'currentColor',
+            black: colors.black,
+            white: colors.white,
+            gray: colors.zinc,
+        },
         borderRadius: {
             none: "0px",
             sm: "2px",
@@ -46,27 +59,27 @@ export default {
             "7xl": "1280px",
         },
         fontSize: {
-            xs: ["12px", { lineHeight: "16px" }],
-            sm: ["14px", { lineHeight: "20px" }],
-            base: ["16px", { lineHeight: "24px" }],
-            lg: ["18px", { lineHeight: "28px" }],
-            xl: ["20px", { lineHeight: "28px" }],
-            "2xl": ["24px", { lineHeight: "32px" }],
-            "3xl": ["30px", { lineHeight: "36px" }],
-            "4xl": ["36px", { lineHeight: "36px" }],
-            "5xl": ["48px", { lineHeight: "1" }],
-            "6xl": ["60px", { lineHeight: "1" }],
-            "7xl": ["72px", { lineHeight: "1" }],
-            "8xl": ["96px", { lineHeight: "1" }],
-            "9xl": ["144px", { lineHeight: "1" }],
+            xs: ["12px", { lineHeight: "100%" }],
+            sm: ["14px", { lineHeight: "100%" }],
+            base: ["16px", { lineHeight: "100%" }],
+            lg: ["18px", { lineHeight: "100%" }],
+            xl: ["20px", { lineHeight: "100%" }],
+            "2xl": ["24px", { lineHeight: "100%" }],
+            "3xl": ["30px", { lineHeight: "100%" }],
+            "4xl": ["36px", { lineHeight: "100%" }],
+            "5xl": ["48px", { lineHeight: "100%" }],
+            "6xl": ["60px", { lineHeight: "100%" }],
+            "7xl": ["72px", { lineHeight: "100%" }],
+            "8xl": ["96px", { lineHeight: "100%" }],
+            "9xl": ["128px", { lineHeight: "100%" }],
         },
         lineHeight: {
-            none: "1",
-            tight: "1.25",
-            snug: "1.375",
-            normal: "1.5",
-            relaxed: "1.625",
-            loose: "2",
+            none: "100%",
+            tight: "125%",
+            snug: "137.5%",
+            normal: "150%",
+            relaxed: "162.5%",
+            loose: "200%",
             3: "12px",
             4: "16px",
             5: "20px",
@@ -134,5 +147,18 @@ export default {
             80: "320px",
             96: "384px",
         },
+        screens: {
+            sm: {max: '640px'},
+            xs: {max: '425px'},
+        },
+    },
+    safelist: [],
+    corePlugins: {
+        preflight: false,
+        backgroundOpacity: false,
+        borderOpacity: false,
+        divideOpacity: false,
+        placeholderOpacity: false,
+        textOpacity: false,
     }
 }
