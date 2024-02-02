@@ -8,9 +8,8 @@ export default {
     build: {
         rollupOptions: {
             input: [
-                './src/emails/*.{json,latte,twig,liquid,njk,hbs,pug,html}',
-                './src/templates/**/*.{json,latte,twig,liquid,njk,hbs,pug,html}',
-                '!./src/templates/**/*.{latte,twig,liquid,njk,hbs,pug,html}.json'
+                './src/templates/**/*.{json,html}',
+                '!./src/templates/**/*.{html}.json'
             ],
         },
     },
@@ -22,10 +21,11 @@ export default {
         }),
         tailwindcss(),
         posthtml({
-            root: './src/emails'
+            root: './src'
         }),
         juice({
-            paths: ['src/templates']
+            paths: ['src/templates'],
+            doctype: '<!DOCTYPE html>'
         }),
         send()
     ]
