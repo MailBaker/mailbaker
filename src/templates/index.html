@@ -1,15 +1,14 @@
 <extends src="layouts/main.html">
     <block name="body">
-        <table class="container" width="640" align="center" style="max-width: 640px; margin: 0 auto;">
+        <table class="container" align="center">
             <tr>
                 <td height="40" style="line-height: 40px"></td>
             </tr>
             <tr>
                 <td>
-                    <table bgcolor="#ffffff" width="100%" align="center"style="border-radius: 16px;border-collapse: separate!important;overflow: hidden;">
+                    <table bgcolor="#ffffff" width="100%" style="border-radius: 16px;border-collapse: separate!important;overflow: hidden;">
                         <tr>
                             <td>
-
                                 <table width="100%" align="center">
                                     <tr>
                                         <td height="40" style="line-height: 40px;"></td>
@@ -21,12 +20,12 @@
                                             <h3>Heading 3</h3>
                                             <h4>Heading 4</h4>
                                             <p>Paragraph</p>
-                                            <ul style="list-style-type: disc;">
+                                            <ul>
                                                 <li>Unordered list item</li>
                                                 <li>Unordered list item</li>
                                                 <li>Unordered list item</li>
                                             </ul>
-                                            <ol style="list-style-type: decimal;">
+                                            <ol>
                                                 <li>Ordered list item</li>
                                                 <li>Ordered list item</li>
                                                 <li>Ordered list item</li>
@@ -50,9 +49,9 @@
                                     </tr>
                                     <tr>
                                         <td class="row" align="center" style="padding: 0 50px;">
-
-                                            <include src="components/button.html"></include>
-
+                                            <include src="components/button.html" locals='{
+                                                "text": "Buttonas"
+                                            }'></include>
                                         </td>
                                     </tr>
                                     <tr>
@@ -60,9 +59,7 @@
                                     </tr>
                                     <tr>
                                         <td class="row" align="center" style="padding: 0 50px;">
-
                                             <include src="components/button-3d.html"></include>
-
                                         </td>
                                     </tr>
                                     <tr>
@@ -70,9 +67,7 @@
                                     </tr>
                                     <tr>
                                         <td class="row" align="center" style="padding: 0 50px;">
-
                                             <include src="components/button-border.html"></include>
-
                                         </td>
                                     </tr>
                                     <tr>
@@ -82,9 +77,9 @@
                                         <td class="row" align="center" style="padding: 0 50px;">
                                             <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
                                                 <tr>
-                                                    <td class="col" width="250">Column 1</td>
+                                                    <td class="col" width="250"><p>Column 1</p></td>
                                                     <td class="col" width="40" height="20" style="line-height: 20px;"></td>
-                                                    <td class="col mobile-right" width="250">Column 2</td>
+                                                    <td class="col mobile-right" width="250"><p>Column 2</p></td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -96,11 +91,11 @@
                                         <td class="row" align="center" style="padding: 0 50px;">
                                             <table width="100%" align="center">
                                                 <tr>
-                                                    <td class="col" width="160">Column 1</td>
+                                                    <td class="col" width="160"><p>Column 1</p></td>
                                                     <td class="col" width="30" height="20" style="line-height: 20px;"></td>
-                                                    <td class="col mobile-center" width="160">Column 2</td>
+                                                    <td class="col mobile-center" width="160"><p>Column 2</p></td>
                                                     <td class="col" width="30" height="20" style="line-height: 20px;"></td>
-                                                    <td class="col mobile-right" width="160">Column 3</td>
+                                                    <td class="col mobile-right" width="160"><p>Column 3</p></td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -112,13 +107,13 @@
                                         <td class="row" align="center" style="padding: 0 50px;">
                                             <table width="100%" align="center">
                                                 <tr>
-                                                    <td class="col" width="120">Column 1</td>
+                                                    <td class="col" width="120"><p>Column 1</p></td>
                                                     <td class="col" width="20" height="20" style="line-height: 20px;"></td>
-                                                    <td class="col mobile-center" width="120">Column 2</td>
+                                                    <td class="col mobile-center" width="120"><p>Column 2</p></td>
                                                     <td class="col" width="20" height="20" style="line-height: 20px;"></td>
-                                                    <td class="col mobile-center" width="120">Column 3</td>
+                                                    <td class="col mobile-center" width="120"><p>Column 3</p></td>
                                                     <td class="col" width="20" height="20" style="line-height: 20px;"></td>
-                                                    <td class="col mobile-right" width="120">Column 4</td>
+                                                    <td class="col mobile-right" width="120"><p>Column 4</p></td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -135,7 +130,7 @@
                                                     </td>
                                                     <td width="20"></td>
                                                     <td width="480" align="left" valign="middle">
-                                                        <h4>Test</h4>
+                                                        <h4>List item</h4>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -158,7 +153,6 @@
                                         </td>
                                     </tr>
                                 </table>
-
                             </td>
                         </tr>
                     </table>
@@ -171,7 +165,6 @@
                     <table width="100%" align="center">
                         <tr>
                             <td class="col" width="260">
-
                                 <table bgcolor="#14848d" width="100%" style=" border-radius: 16px; border-collapse: separate!important; overflow: hidden;">
                                     <tr>
                                         <td class="row" style="padding: 40px 50px;">
@@ -179,11 +172,9 @@
                                         </td>
                                     </tr>
                                 </table>
-
                             </td>
                             <td class="col" width="20" height="20" style="line-height: 20px;"></td>
                             <td class="col mobile-right" width="260">
-
                                 <table bgcolor="#5e5e5e" width="100%" style=" border-radius: 16px; border-collapse: separate!important; overflow: hidden;">
                                     <tr>
                                         <td class="row" style="padding: 40px 50px;">
@@ -191,7 +182,6 @@
                                         </td>
                                     </tr>
                                 </table>
-
                             </td>
                         </tr>
                     </table>
@@ -200,21 +190,21 @@
             <tr>
                 <td height="20" style="line-height: 20px"></td>
             </tr>
-                <td>
-                    <table bgcolor="#5e5e5e" width="100%" align="center" style=" border-radius: 16px; border-collapse: separate!important; overflow: hidden;">
-                        <tr>
-                            <td class="row" style="padding: 40px 50px;">
-                                <p style="color:#ffffff;"><strong>Company</strong></p>
-                                <p style="color:#ffffff;">You received this email because you signed up on our website or made a purchase from us.</p>
-                                <p>
-                                    <a href="#" style="color:#ffffff; text-decoration: underline;">Unsubscribe</a>
-                                    <span style="padding: 0 5px; mso-padding-left-alt:5px; mso-padding-right-alt:5px; text-decoration: none; color: #515856;" class="">|</span>
-                                    <a href="#" style="color:#ffffff; text-decoration: underline;">Update preferences</a>
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
+            <td>
+                <table bgcolor="#5e5e5e" width="100%" style=" border-radius: 16px; border-collapse: separate!important; overflow: hidden;">
+                    <tr>
+                        <td class="row" style="padding: 40px 50px;">
+                            <p style="color:#ffffff;"><strong>Company</strong></p>
+                            <p style="color:#ffffff;">You received this email because you signed up on our website or made a purchase from us.</p>
+                            <p>
+                                <a href="#" style="color:#ffffff; text-decoration: underline;">Unsubscribe</a>
+                                <span style="padding: 0 5px; mso-padding-left-alt:5px; mso-padding-right-alt:5px; text-decoration: none; color: #515856;" class="">|</span>
+                                <a href="#" style="color:#ffffff; text-decoration: underline;">Update preferences</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
             </tr>
             <tr>
                 <td height="40" style="line-height: 40px"></td>

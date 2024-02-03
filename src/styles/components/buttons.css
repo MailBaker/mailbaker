@@ -1,0 +1,11 @@
+.btn {
+    @apply inline-block text-center font-inter font-medium text-base text-white bg-blue-500 hover:bg-blue-700 rounded-md py-3.5 px-6
+}
+
+.btn-3d {
+    @apply pb-3 border-b-2 border-blue-800;
+    border-bottom-style: solid;
+}
+.btn-border {
+    @apply px-5.5 py-3 border-2 border-solid border-blue-800
+}

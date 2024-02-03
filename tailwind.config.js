@@ -18,6 +18,7 @@ export default {
             black: colors.black,
             white: colors.white,
             gray: colors.zinc,
+            blue: colors.blue,
         },
         borderRadius: {
             none: "0px",
@@ -121,11 +122,17 @@ export default {
             3: "12px",
             3.5: "14px",
             4: "16px",
+            4.5: "18px",
             5: "20px",
+            5.5: "22px",
             6: "24px",
+            6.5: "26px",
             7: "28px",
+            7.5: "30px",
             8: "32px",
+            8.5: "34px",
             9: "36px",
+            9.5: "38px",
             10: "40px",
             11: "44px",
             12: "48px",
@@ -148,9 +155,10 @@ export default {
             96: "384px",
         },
         screens: {
-            sm: {max: '640px'},
-            xs: {max: '425px'},
+            sm: {'max': '639px'},
+            xs: {'max': '424px'},
         },
+
     },
     safelist: [],
     corePlugins: {

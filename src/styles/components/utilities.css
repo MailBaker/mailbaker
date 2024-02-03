@@ -1,0 +1,19 @@
+.mobile-center {
+    @apply sm:!text-center sm:!float-none
+}
+
+.mobile-left {
+    @apply sm:!text-left sm:!float-left
+}
+
+.mobile-right {
+    @apply sm:!text-right sm:!float-right
+}
+
+.mobile-mx-auto {
+    @apply sm:!mx-auto
+}
+
+.mobile-w-full {
+    @apply sm:!w-full sm:!max-w-full
+}
