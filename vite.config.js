@@ -3,6 +3,9 @@ import tailwindcss from '@vituum/vite-plugin-tailwindcss'
 import posthtml from '@vituum/vite-plugin-posthtml'
 import juice from '@vituum/vite-plugin-juice'
 import send from '@vituum/vite-plugin-send'
+import beautify from 'vite-plugin-beautify'
+
+
 
 export default {
     build: {
@@ -25,8 +28,26 @@ export default {
         }),
         juice({
             paths: ['src/templates'],
-            doctype: '<!DOCTYPE html>'
+            doctype: '<!DOCTYPE html>',
+            options: {
+                preserveImportant: true, // false
+            }
         }),
-        send()
+        send(),
+        beautify({
+            inDir: 'dist',
+            html: {
+                enabled: true,
+                options: {
+                    indent_size: 4,
+                },
+            },
+            js: {
+                enabled: false,
+            },
+            css: {
+                enabled: false,
+            },
+        })
     ]
 }
