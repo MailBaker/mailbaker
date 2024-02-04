@@ -4,8 +4,8 @@ import posthtml from '@vituum/vite-plugin-posthtml'
 import juice from '@vituum/vite-plugin-juice'
 import send from '@vituum/vite-plugin-send'
 import beautify from 'vite-plugin-beautify'
-
-
+import postcssMergeLonghand from 'posthtml-postcss-merge-longhand'
+import posthtmlComponent from 'posthtml-component'
 
 export default {
     build: {
@@ -24,7 +24,18 @@ export default {
         }),
         tailwindcss(),
         posthtml({
-            root: './src'
+            root: './src',
+            include: '**/*.html',
+            plugins: [
+                posthtmlComponent({
+                    root: './src',
+                    folders: ['components', 'layouts', 'templates'],
+                    tagPrefix: 'mb-'
+                }),
+                postcssMergeLonghand()
+                // Add other posthtml plugins here as needed
+            ],
+            // exclude: ['posthtml-extend', 'posthtml-include'],
         }),
         juice({
             paths: ['src/templates'],
