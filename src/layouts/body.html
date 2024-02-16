@@ -1,17 +1,25 @@
+<script props>
+    module.exports = {
+        lang: props.lang || 'en',
+        dir: props.dir || 'ltr',
+        title: props.title || 'MailBaker',
+        preheader: props.preheader ? props.preheader : false,
+        bgcolor: props.bgcolor ? props.bgcolor : '#f4f4f5'
+    }
+</script>
 <!DOCTYPE html>
-<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-
+<html lang="{{ lang }}" dir="{{ dir }}" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <meta charset="utf-8"> <!-- Some comment -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
-    <title></title>
+    <title>{{ title }}</title>
     <!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
     <!--[if mso]><style>* { font-family: sans-serif !important; } ul, ol { margin-left:-22px !important;}</style><![endif]-->
     <!--[if !mso]>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" type="text/css">
     <![endif]-->
     <style type="text/css">
         @media all {
@@ -25,14 +33,15 @@
             a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
         }
     </style>
+    <stack name="head"></stack>
     <style> @import "/src/styles/main.css"; </style>
 </head>
-
-<body class="!m-0 !p-0" style="mso-line-height-rule: exactly;">
-    <center class="document" role="article" aria-roledescription="email" lang="en" dir="ltr">
-        <div class="hidden max-h-0 overflow-hidden" style="mso-hide:all;" aria-hidden="true"> This text will appear in the inbox preview </div>
-        <block name="body" with="locals"></block>
+<body style="background-color: {{ bgcolor }};">
+    <center class="document" role="article" aria-roledescription="email" lang="en" dir="ltr" style="background-color: {{ bgcolor }};">
+        <if condition="preheader">
+            <div class="preheader" aria-hidden="true">{{ preheader }}</div>
+        </if>
+        <yield></yield>
     </center>
 </body>
-
 </html>

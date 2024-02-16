@@ -1,5 +1,15 @@
-<table width="100%">
+<script props>
+    module.exports = {
+        DividerWidth: props.width ? props.width : '100%',
+        DividerAlign: props.align ? props.align : 'center',
+        DividerWeight: props.weight ? props.weight : '1',
+        DividerStyle: props.style ? props.style : 'solid',
+        DividerColor: props.color ? props.color : '#e7e7e7'
+    }
+</script>
+
+<table width="{{ DividerWidth }}" align="{{ DividerAlign }}">
     <tr>
-        <td class="divider"></td>
+        <td style="border-top: {{ DividerWeight }}px {{ DividerStyle }} {{ DividerColor }};"></td>
     </tr>
 </table>

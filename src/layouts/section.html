@@ -1,0 +1,23 @@
+<script props>
+    module.exports = {
+        width: props.width ? props.width : '100%',
+        bgColor: props.bgColor ? props.bgColor : '#ffffff',
+        borderRadius: props.borderRadius ? props.borderRadius : '0',
+        paddingTop: props.paddingTop ? props.paddingTop : '20',
+        paddingBottom: props.paddingBottom ? props.paddingBottom : '20'
+    }
+</script>
+
+<table bgcolor="{{ bgColor }}" width="{{ width }}" style="border-radius: {{ borderRadius }}px; border-collapse: separate!important; overflow: hidden;">
+    <if condition="paddingTop">
+        <tr>
+            <td height="{{ paddingTop }}" style="line-height: {{ paddingTop }}px"></td>
+        </tr>
+    </if>
+    <yield></yield>
+    <if condition="paddingBottom">
+        <tr>
+            <td height="{{ paddingBottom }}" style="line-height: {{ paddingBottom }}px"></td>
+        </tr>
+    </if>
+</table>

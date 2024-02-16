@@ -1,5 +1,5 @@
 .btn {
-    @apply inline-block text-center font-inter font-medium text-base text-white bg-blue-500 hover:bg-blue-700 rounded-md py-3.5 px-6
+    @apply inline-block text-center font-inter font-medium text-base
 }
 
 .btn-3d {

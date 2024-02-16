@@ -1,0 +1,16 @@
+<script props>
+    module.exports = {
+        width: props.width ? props.width : '100%',
+        height: props.height ? props.height : '',
+        align: props.align ? props.align : 'left',
+        valign: props.valign ? props.valign : 'top',
+    }
+</script>
+<if condition="height">
+    <td class="col" width="{{ width }}" height="{{ height }}" style="line-height: {{ height }}px;"></td>
+</if>
+<else>
+    <td class="col" width="{{ width }}" align="{{ align }}" valign="{{ valign }}">
+        <yield></yield>
+    </td>
+</else>

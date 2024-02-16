@@ -1,13 +1,28 @@
+<script props>
+    module.exports = {
+        btnText: props.text ? props.text : 'Button',
+        btnHref: props.href ? props.href : '#',
+        btnBgColor: props.bgColor ? props.bgColor : '#3b82f6',
+        btnColor: props.color ? props.color : '#ffffff',
+        btnBorderRadius: props.borderRadius ? props.borderRadius : '6',
+        btnSize: {
+            base: 'py-3.5 px-6',
+        }[props.size] || 'py-3.5 px-6',
+        btnSizeMSO: {
+            base: '24px,14px,24px,14px',
+        }[props.size] || '24px,14px,24px,14px',
+    }
+</script>
+<!--[if !mso]>-->
+<a href="{{ btnHref }}" class="btn {{ btnSize }}" style="background-color: {{ btnBgColor }}; color: {{ btnColor }};border-radius: {{ btnBorderRadius }}px;">{{ btnText }}</a>
+<!--<![endif]-->
 <!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.mailbaker.com" arcsize="12%" stroke="f" fillcolor="#14848d" style="v-text-anchor:middle; mso-wrap-style:none;">
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{ btnHref }}" arcsize="12%" stroke="f" fillcolor="{{ btnBgColor }}" style="v-text-anchor:middle; mso-wrap-style:none;">
     <w:anchorlock/>
-    <v:textbox inset="24px,14px,24px,14px" style="mso-fit-shape-to-text:true;">
-        <center style="font-family:sans-serif;color:#ffffff;font-size:16px;line-height:16px;mso-line-height-rule:exactly;">
-            {{ text }}
+    <v:textbox inset="{{ btnSizeMSO }}" style="mso-fit-shape-to-text:true;">
+        <center style="font-family:sans-serif;color:{{ btnColor }};font-size:16px;line-height:16px;mso-line-height-rule:exactly;">
+            {{ btnText }}
         </center>
     </v:textbox>
 </v:roundrect>
 <![endif]-->
-<!--[if !mso]>-->
-<a href="#" class="btn"> {{ text }} </a>
-<!--<![endif]-->
