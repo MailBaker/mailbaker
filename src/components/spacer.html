@@ -1,1 +1,13 @@
-<div>Spaceris</div>
+<script props>
+    module.exports = {
+        DividerWidth: props.width ? props.width : '100%',
+        DividerHeight: props.height ? props.height : '30px',
+        DividerAlign: props.align ? props.align : 'center'
+    }
+</script>
+
+<table width="{{ DividerWidth }}" align="{{ DividerAlign }}">
+    <tr>
+        <td style="height: {{ DividerHeight }}; line-height: {{ DividerHeight }};"></td>
+    </tr>
+</table>
